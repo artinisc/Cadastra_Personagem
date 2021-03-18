@@ -72,7 +72,7 @@ namespace Projeto_Treinamento
             }while(verifica == false);
 
             classe = personagem.getClasse();
-            Console.WriteLine("Seu Personagem é:\n Nome:" + personagem.nome + "\n Classe:" + classe.nome);
+            Console.WriteLine("Seu Personagem é:\n Nome: " + personagem.nome + "\n Classe: " + classe.nome);
             personagem.nome = Console.ReadLine();
 
 

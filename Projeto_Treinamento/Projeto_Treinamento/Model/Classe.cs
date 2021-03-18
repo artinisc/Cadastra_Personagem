@@ -27,26 +27,26 @@ namespace Projeto_Treinamento.Model
         public List<Classe> criaClasses(){
 
             List<Classe> classes = new List<Classe>();
-            Classe criada = new Classe();
-            int contId = 0;
 
-            id++;
+            for (int id = 0; id <= 2; id++)
+            {
+                Classe modelo = new Classe();
+                switch (id){
+                    case 1:
+                        modelo.id = id;
+                        modelo.nome = "Guerreiro";
+                        classes.Add(modelo);
+                    break;
+                    case 2:
+                        modelo.id = id;
+                        modelo.nome = "Mago";
+                        classes.Add(modelo);
+                    break;
+                }
+            }
 
-            criada.id = contId;
-            criada.nome = "Guerreiro";
 
-            classes.Add(criada);
-
-            criada.id = 0;
-            criada.nome = "";
-            id++;
-
-            criada.id = contId;
-            criada.nome = "Mago";
-
-            classes.Add(criada);
-
-            return classes;
+                return classes;
         }
 
     }
