@@ -28,7 +28,7 @@ namespace Projeto_Treinamento.Model
 
             List<Classe> classes = new List<Classe>();
 
-            for (int id = 0; id <= 2; id++)
+            for (int id = 0; id <= 3; id++)
             {
                 Classe modelo = new Classe();
                 switch (id){
@@ -40,6 +40,11 @@ namespace Projeto_Treinamento.Model
                     case 2:
                         modelo.id = id;
                         modelo.nome = "Mago";
+                        classes.Add(modelo);
+                    break;
+                    case 3:
+                        modelo.id = id;
+                        modelo.nome = "Arqueiro";
                         classes.Add(modelo);
                     break;
                 }

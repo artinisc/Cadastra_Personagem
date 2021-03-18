@@ -26,7 +26,7 @@ namespace Projeto_Treinamento.Model
         public string setClasse(Classe classeP)
         {
             string erro = "";
-            if (classeP.nome.Equals("Guerreiro") || classeP.nome.Equals("Mago"))
+            if (classeP.nome.Equals("Guerreiro") || classeP.nome.Equals("Mago") || classeP.nome.Equals("Arqueiro"))
             {
                 this.classe = classeP;
                 erro = "sucesso";
