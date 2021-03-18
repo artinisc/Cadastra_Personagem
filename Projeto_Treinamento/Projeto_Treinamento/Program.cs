@@ -33,7 +33,7 @@ namespace Projeto_Treinamento
             Console.WriteLine("Qual o seu nome?");
             personagem.nome = Console.ReadLine();
 
-            Console.WriteLine("Escolha sua classe:/n Digite 1 para " + classes[1] + "/n Digite 2 para " + classes[2]);
+            Console.WriteLine("Escolha sua classe:\n Digite 1 para " + classes[0].nome + "\n Digite 2 para " + classes[1].nome);
             recebeEntrada = Int32.Parse(Console.ReadLine());
 
             do{
@@ -66,13 +66,13 @@ namespace Projeto_Treinamento
                 else
                 {
                     verifica = false;
-                    Console.WriteLine("Opção Invalida!/n Escolha sua classe:/n Digite 1 para " + classes[1] + "/n Digite 2 para " + classes[2]);
+                    Console.WriteLine("Opção Invalida!/n Escolha sua classe:\n Digite 1 para " + classes[0] + "\n Digite 2 para " + classes[1]);
                     recebeEntrada = Int32.Parse(Console.ReadLine());
                 }
             }while(verifica == false);
 
             classe = personagem.getClasse();
-            Console.WriteLine("Seu Personagem é:/n Nome:" + personagem.nome + "/nClasse:" + classe.nome);
+            Console.WriteLine("Seu Personagem é:\n Nome:" + personagem.nome + "\n Classe:" + classe.nome);
             personagem.nome = Console.ReadLine();
 
 

@@ -1,1 +1,6 @@
 C:\Users\artini.scarabelot\Desktop\Artini\Projetos\Projeto_Treinamento\Projeto_Treinamento\bin\Debug\Projeto_Treinamento.exe.config
+C:\Users\artini.scarabelot\Desktop\Artini\Projetos\Projeto_Treinamento\Projeto_Treinamento\bin\Debug\Projeto_Treinamento.exe
+C:\Users\artini.scarabelot\Desktop\Artini\Projetos\Projeto_Treinamento\Projeto_Treinamento\bin\Debug\Projeto_Treinamento.pdb
+C:\Users\artini.scarabelot\Desktop\Artini\Projetos\Projeto_Treinamento\Projeto_Treinamento\obj\Debug\Projeto_Treinamento.csprojResolveAssemblyReference.cache
+C:\Users\artini.scarabelot\Desktop\Artini\Projetos\Projeto_Treinamento\Projeto_Treinamento\obj\Debug\Projeto_Treinamento.exe
+C:\Users\artini.scarabelot\Desktop\Artini\Projetos\Projeto_Treinamento\Projeto_Treinamento\obj\Debug\Projeto_Treinamento.pdb
