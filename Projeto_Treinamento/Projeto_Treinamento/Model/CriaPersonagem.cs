@@ -6,43 +6,50 @@ using System.Threading.Tasks;
 
 namespace Projeto_Treinamento.Model
 {
-    class Jogo
+    class CriaPersonagem
     {
 
-        public void jogar()
+        public Personagem criar()
         {
 
+            //estrutura
             List<Classe> classes = new List<Classe>();
-            Classe classe = new Classe();
+
+            //personagm
             Personagem personagem = new Personagem();
-            int recebeEntrada = 0;
+            Classe classe = new Classe();
+
+            //verificadores
             Boolean verifica = false;
+            int recebeEntrada = 0;
             string retorno = "";
             int contC = 0;
 
+            //seta id e nome do personagem
             classes = classe.criaClasses();
-            personagem.id = 1;
-
+            personagem.Id = 1;
+            Console.Clear();
             Console.WriteLine("Qual o seu nome?");
-            personagem.nome = Console.ReadLine();
+            personagem.Nome = Console.ReadLine();
 
+            //seta a classe do personagem
             Console.Clear();
             Console.WriteLine("Escolha sua classe:\n");
             contC = 0;
             foreach (Classe C in classes)
             {
                 contC++;
-                Console.WriteLine("Digite " + contC + " para " + C.nome + "\n");
+                Console.WriteLine("Digite " + contC + " para " + C.Nome + "\n");
             }
             recebeEntrada = Int32.Parse(Console.ReadLine());
             recebeEntrada--;
 
             do
             {
-
                 try
                 {
                     retorno = personagem.setClasse(classes[recebeEntrada]);
+
                     if (retorno.Equals("sucesso"))
                     {
                         verifica = true;
@@ -56,23 +63,38 @@ namespace Projeto_Treinamento.Model
 
                 if (verifica == false)
                 {
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("Opção Invalida! Escolha outra opção para selecionar sua classe:\n");
                     contC = 0;
                     foreach (Classe C in classes)
                     {
                         contC++;
-                        Console.WriteLine("Digite " + contC + " para " + C.nome + "\n");
+                        Console.WriteLine("Digite " + contC + " para " + C.Nome + "\n");
                     }
                     recebeEntrada = Int32.Parse(Console.ReadLine());
                     recebeEntrada--;
                 }
-
             } while (verifica == false);
 
+            //obtem a classe do ersnagem
             Console.Clear();
             classe = personagem.getClasse();
-            Console.WriteLine("Seu Personagem é:\n Nome: " + personagem.nome + "\n Classe: " + classe.nome);
+
+            personagem.CarismaBase = 10;
+            personagem.SabedoriaBase = 10;
+            personagem.RestenciaBase = 10;
+            personagem.ForcaBase = 10;
+            personagem.MagiaBase = 10;
+            personagem.VelocidadeBase = 10;
+            personagem.VidaBase = 50;
+
+            personagem = personagem.defineAtributos(personagem);
+
+            //exibe personagem
+            Console.WriteLine("\nNome: " + personagem.Nome + "\nClasse: " + classe.Nome);
+            Console.WriteLine("\nCarisma: " + personagem.Carisma + " - Resistencia: " + personagem.Restencia + " / Força: " + personagem.Forca + " - Velocidade: " + personagem.Velocidade + " - Vida: " + personagem.Vida);
+
+            return personagem;
 
         }
 

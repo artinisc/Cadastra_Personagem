@@ -19,18 +19,26 @@ namespace Projeto_Treinamento
         public void inicia()
         {
 
-            Jogo comeco = new Jogo();
+            //partes do jogo
+            CriaPersonagem comeco = new CriaPersonagem();
 
-            comeco.jogar();
+            //personagm
+            Personagem personagem = new Personagem();
+            Classe classe = new Classe();
 
-            Console.WriteLine("\n\n\nDigite 1 para jogar novamente.");
-            Console.WriteLine("\nDigite 2 para sair.\n");
-            int repetir = Int32.Parse(Console.ReadLine());
-
-            if (repetir == 1)
+            int repetir = 0;
+            do
             {
-                comeco.jogar();
-            }
+                personagem = comeco.criar();
+                classe = personagem.getClasse();
+
+                Console.WriteLine("\n\n\nDigite 1 para continuar.");
+                Console.WriteLine("\nDigite 2 para criar novo personagem.\n");
+                repetir = Int32.Parse(Console.ReadLine());
+            } while (repetir == 2);
+
+
+
 
         }
 
