@@ -14,17 +14,18 @@ namespace Projeto_Treinamento.Model
         public float CarismaBase { get; set; }
         public float SabedoriaBase { get; set; }
         public float RestenciaBase { get; set; }
-        public float Carisma { get; set; }
-        public float Sabedoria { get; set; }
-        public float Restencia { get; set; }
+        public int Carisma { get; set; }
+        public int Sabedoria { get; set; }
+        public int Restencia { get; set; }
         public float ForcaBase { get; set; }
         public float MagiaBase { get; set; }
         public float VelocidadeBase { get; set; }
         public float VidaBase { get; set; }
-        public float Forca { get; set; }
-        public float Magia { get; set; }
-        public float Velocidade { get; set; }
-        public float Vida { get; set; }
+        public int Forca { get; set; }
+        public int Magia { get; set; }
+        public int Velocidade { get; set; }
+        public int Vida { get; set; }
+        public int VidaAtual { get; set; }
 
         private Classe classe { get; set; }
         
@@ -45,7 +46,7 @@ namespace Projeto_Treinamento.Model
             {
                 if (classeP.Nome.Equals(C.Nome))
                 {
-                    this.classe = classeP;
+                    classe = classeP;
                     erro = "sucesso";
                 }
             }
@@ -53,19 +54,26 @@ namespace Projeto_Treinamento.Model
             return erro;
         }
 
-        public Personagem defineAtributos(Personagem personagem)
+        public void defineAtributos()
         {
-            this.Carisma = this.CarismaBase * this.classe.BonusCarisma;
-            this.Sabedoria = this.SabedoriaBase * this.classe.BonusSabedoria;
-            this.Restencia = this.RestenciaBase * this.classe.BonusRestencia;
-            this.Forca = this.ForcaBase + (this.Restencia * 0.3f);
-            this.Magia = this.MagiaBase + (this.Sabedoria * 0.3f);
-            this.Velocidade = this.VelocidadeBase + (this.Carisma * 0.3f);
-            this.Vida = this.VidaBase + (this.Restencia * 0.1f) + (this.Restencia * 0.1f) + (this.Restencia * 0.1f);
-
-            return personagem;
+            this.Carisma = Convert.ToInt32(this.CarismaBase * this.classe.BonusCarisma);
+            this.Sabedoria = Convert.ToInt32(this.SabedoriaBase * this.classe.BonusSabedoria);
+            this.Restencia = Convert.ToInt32(this.RestenciaBase * this.classe.BonusRestencia);
+            this.Forca = Convert.ToInt32(this.ForcaBase * this.classe.BonusForca + (this.Restencia * 0.3f));
+            this.Magia = Convert.ToInt32(this.MagiaBase * this.classe.BonusMagia + (this.Sabedoria * 0.3f));
+            this.Velocidade = Convert.ToInt32(this.VelocidadeBase * this.classe.BonusVelocidade + (this.Carisma * 0.3f));
+            this.Vida = Convert.ToInt32(this.VidaBase * this.classe.BonusVida + (this.Restencia * 0.1f) + (this.Sabedoria * 0.1f) + (this.Carisma * 0.1f));
+            this.VidaAtual = this.Vida;
         }
 
+        public void calculaVida(int valor)
+        {
+            this.VidaAtual =+ valor;
+            if (this.VidaAtual > this.Vida)
+            {
+                this.VidaAtual = this.Vida;
+            }
+        }
 
     }
 }

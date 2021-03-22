@@ -88,11 +88,11 @@ namespace Projeto_Treinamento.Model
             personagem.VelocidadeBase = 10;
             personagem.VidaBase = 50;
 
-            personagem = personagem.defineAtributos(personagem);
+            personagem.defineAtributos();
 
             //exibe personagem
             Console.WriteLine("\nNome: " + personagem.Nome + "\nClasse: " + classe.Nome);
-            Console.WriteLine("\nCarisma: " + personagem.Carisma + " - Resistencia: " + personagem.Restencia + " / Força: " + personagem.Forca + " - Velocidade: " + personagem.Velocidade + " - Vida: " + personagem.Vida);
+            Console.WriteLine("\nCarisma: " + personagem.Carisma + " - Sabedoria: " + personagem.Sabedoria + " - Resistencia: " + personagem.Restencia + " \nForça: " + personagem.Forca + " - Magia: " + personagem.Magia + " - Velocidade: " + personagem.Velocidade + " - Vida: " + personagem.VidaAtual + "/" + personagem.Vida);
 
             return personagem;
 
