@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace Projeto_Treinamento
+namespace Projeto_Treinamento.Model
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -26,18 +26,43 @@ namespace Projeto_Treinamento
             Personagem personagem = new Personagem();
             Classe classe = new Classe();
 
-            int repetir = 0;
+            //Jogo
+            Jogo jogo = new Jogo();
+            int resposta = 0;
+            Boolean avanca = false;
+
             do
             {
-                personagem = comeco.criar();
+                personagem = comeco.criarP();
                 classe = personagem.getClasse();
 
-                Console.WriteLine("\n\n\nDigite 1 para continuar.");
-                Console.WriteLine("\nDigite 2 para criar novo personagem.\n");
-                repetir = Int32.Parse(Console.ReadLine());
-            } while (repetir == 2);
+                Console.WriteLine("Precione 1 para continuar.");
+                Console.WriteLine("\nPrecione 2 para criar novo personagem.\n");
+                Console.WriteLine("\nPrecione 3 para sair.\n");
+                resposta = Int32.Parse(Console.ReadLine());
 
+                do
+                {
+                    if (resposta == 1 || resposta == 2)
+                    {
+                        avanca = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
+                        resposta = Int32.Parse(Console.ReadLine());
+                    }
+                } while (avanca == false);
 
+            } while (resposta == 2);
+
+            if (resposta == 1)
+            {
+                jogo.jogar(personagem, classe);
+            }
+
+            
+            
 
 
         }

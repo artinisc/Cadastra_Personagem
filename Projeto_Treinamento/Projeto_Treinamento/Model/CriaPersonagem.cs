@@ -6,18 +6,47 @@ using System.Threading.Tasks;
 
 namespace Projeto_Treinamento.Model
 {
-    class CriaPersonagem
+    public class CriaPersonagem
     {
 
-        public Personagem criar()
+        public Personagem criarP()
         {
-
-            //estrutura
-            List<Classe> classes = new List<Classe>();
 
             //personagm
             Personagem personagem = new Personagem();
+            Informacoes inf = new Informacoes();
+
+            //seta id e nome do personagem
+            personagem.Id = 1;
+            Console.Clear();
+            Console.WriteLine("Qual o seu nome?");
+            personagem.Nome = Console.ReadLine();
+
+            //obtem a classe do ersnagem
+            Console.Clear();
+            
+            personagem.CarismaBase = 10;
+            personagem.InteligenciaBase = 10;
+            personagem.RestenciaBase = 10;
+            personagem.ForcaBase = 10;
+            personagem.MagiaBase = 10;
+            personagem.VelocidadeBase = 10;
+            personagem.VitalidadeBase = 50;
+            personagem.estado = true;
+
+            //exibe personagem
+            inf.infP(personagem);
+            
+            return personagem;
+
+        }
+
+        public Personagem escolherC(Personagem personagem){
+
+            //estrutura
+            List<Classe> classes = new List<Classe>();
             Classe classe = new Classe();
+            Informacoes inf = new Informacoes();
 
             //verificadores
             Boolean verifica = false;
@@ -25,12 +54,7 @@ namespace Projeto_Treinamento.Model
             string retorno = "";
             int contC = 0;
 
-            //seta id e nome do personagem
             classes = classe.criaClasses();
-            personagem.Id = 1;
-            Console.Clear();
-            Console.WriteLine("Qual o seu nome?");
-            personagem.Nome = Console.ReadLine();
 
             //seta a classe do personagem
             Console.Clear();
@@ -76,26 +100,13 @@ namespace Projeto_Treinamento.Model
                 }
             } while (verifica == false);
 
-            //obtem a classe do ersnagem
-            Console.Clear();
             classe = personagem.getClasse();
-
-            personagem.CarismaBase = 10;
-            personagem.SabedoriaBase = 10;
-            personagem.RestenciaBase = 10;
-            personagem.ForcaBase = 10;
-            personagem.MagiaBase = 10;
-            personagem.VelocidadeBase = 10;
-            personagem.VidaBase = 50;
 
             personagem.defineAtributos();
 
-            //exibe personagem
-            Console.WriteLine("\nNome: " + personagem.Nome + "\nClasse: " + classe.Nome);
-            Console.WriteLine("\nCarisma: " + personagem.Carisma + " - Sabedoria: " + personagem.Sabedoria + " - Resistencia: " + personagem.Restencia + " \nForça: " + personagem.Forca + " - Magia: " + personagem.Magia + " - Velocidade: " + personagem.Velocidade + " - Vida: " + personagem.VidaAtual + "/" + personagem.Vida);
+            Console.Clear();
 
             return personagem;
-
         }
 
     }

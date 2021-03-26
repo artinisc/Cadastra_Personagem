@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_Treinamento.Model
 {
-    class Classe
+    public class Classe
     {
 
         public int Id { get; set; }
@@ -15,10 +15,10 @@ namespace Projeto_Treinamento.Model
         public float BonusForca { get; set; }
         public float BonusMagia { get; set; }
         public float BonusVelocidade { get; set; }
-        public float BonusVida { get; set; }
+        public float BonusVitalidade { get; set; }
 
         public float BonusCarisma { get; set; }
-        public float BonusSabedoria { get; set; }
+        public float BonusInteligencia { get; set; }
         public float BonusRestencia { get; set; }
 
         public string Vantagem { get; set; }
@@ -42,9 +42,9 @@ namespace Projeto_Treinamento.Model
                         modelo.BonusForca = 1.5f;
                         modelo.BonusMagia = 1.0f;
                         modelo.BonusVelocidade = 1.2f;
-                        modelo.BonusVida = 1.3f;
+                        modelo.BonusVitalidade = 1.3f;
                         modelo.BonusCarisma = 1.0f;
-                        modelo.BonusSabedoria = 1.0f;
+                        modelo.BonusInteligencia = 1.0f;
                         modelo.BonusRestencia = 1.3f;
                         modelo.Vantagem = "";
                         modelo.PoderPrincipal = "";
@@ -59,9 +59,9 @@ namespace Projeto_Treinamento.Model
                         modelo.BonusForca = 1.0f;
                         modelo.BonusMagia = 1.5f;
                         modelo.BonusVelocidade = 1.3f;
-                        modelo.BonusVida = 1.2f;
+                        modelo.BonusVitalidade = 1.2f;
                         modelo.BonusCarisma = 1.0f;
-                        modelo.BonusSabedoria = 1.3f;
+                        modelo.BonusInteligencia = 1.3f;
                         modelo.BonusRestencia = 1.0f;
                         modelo.Vantagem = "";
                         modelo.PoderPrincipal = "";
@@ -76,9 +76,9 @@ namespace Projeto_Treinamento.Model
                         modelo.BonusForca = 1.3f;
                         modelo.BonusMagia = 1.0f;
                         modelo.BonusVelocidade = 1.5f;
-                        modelo.BonusVida = 1.2f;
+                        modelo.BonusVitalidade = 1.2f;
                         modelo.BonusCarisma = 1.3f;
-                        modelo.BonusSabedoria = 1.0f;
+                        modelo.BonusInteligencia = 1.0f;
                         modelo.BonusRestencia = 1.0f;
                         modelo.Vantagem = "";
                         modelo.PoderPrincipal = "";

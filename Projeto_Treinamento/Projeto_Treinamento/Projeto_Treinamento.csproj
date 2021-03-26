@@ -41,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Informacoes.cs" />
+    <Compile Include="Model\Decisao.cs" />
+    <Compile Include="PartesJogo\Inicio.cs" />
+    <Compile Include="PartesJogo\Prologo.cs" />
     <Compile Include="Model\Classe.cs" />
     <Compile Include="Model\CriaPersonagem.cs" />
+    <Compile Include="Model\Jogo.cs" />
     <Compile Include="Model\Personagem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
