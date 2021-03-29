@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_Treinamento.Model
 {
-    class Decisao
+    public class Decisao
     {
         public Boolean RecebeuInformacoesLaboratorio { get; set; }
     }

@@ -21,9 +21,6 @@ namespace Projeto_Treinamento.Model
             Console.Clear();
             Console.WriteLine("Qual o seu nome?");
             personagem.Nome = Console.ReadLine();
-
-            //obtem a classe do ersnagem
-            Console.Clear();
             
             personagem.CarismaBase = 10;
             personagem.InteligenciaBase = 10;
@@ -35,6 +32,7 @@ namespace Projeto_Treinamento.Model
             personagem.estado = true;
 
             //exibe personagem
+            Console.Clear();
             inf.infP(personagem);
             
             return personagem;

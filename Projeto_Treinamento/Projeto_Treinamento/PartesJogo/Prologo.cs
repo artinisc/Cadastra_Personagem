@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_Treinamento.PartesJogo
 {
-    class Prologo
+    public class Prologo
     {
 
         public Personagem p1(Personagem personagem)
@@ -59,14 +59,14 @@ namespace Projeto_Treinamento.PartesJogo
                     Console.WriteLine("Enfim, bom proveito, vou levar o relatorio até a direção.");
                     Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
                     Console.ReadLine();
+                    Console.Clear();
                     Console.WriteLine("Voce segue ao laboratorio, e ve sobre a mesa de testes uma esfera flutuando e rodeada por uma corrente eletrica.");
-                    Console.WriteLine("Ao me aproximar percebo que éla parece feita em um materia metalico, porem diferente dos que conhesso, este é um pouco fosco,");
+                    Console.WriteLine("Ao me aproximar percebo que éla parece feita em um materia metalico,");
+                    Console.WriteLine("porem diferente dos que conhesso, este é um pouco fosco,");
                     Console.WriteLine("como se tivesse um fino revestimento ceramico.");
                     Console.WriteLine("Porem voce não consegue observar por muito tempo...");
                     Console.WriteLine("Repentinamente o objeto começa a emitir um som metalico e a sala é tomada por um clarão ofuscante!");
                     Console.WriteLine("Por um momento tudo fica escuro e voce sente como se estivece girando pelo ar e é tomado por uma forte nausea.");
-                    Console.ReadLine();
-                    personagem.escolhas.RecebeuInformacoesLaboratorio = true;
                     personagem.estado = true;
                     personagem.ultimaR = 1;
                     Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");

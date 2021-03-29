@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Projeto_Treinamento.Model
 {
-    class Informacoes
+    public class Informacoes
     {
 
         //informação do personagem
         public void infP(Personagem personagem){
             Console.WriteLine("   Personagem: " + personagem.Nome);
-            Console.WriteLine("   Resistencia: " + personagem.Restencia + " | Inteligencia: " + personagem.Inteligencia + " | Carisma:    " + personagem.Carisma);
             Console.WriteLine("\n\n");
         }
 

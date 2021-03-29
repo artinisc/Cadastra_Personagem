@@ -28,9 +28,9 @@ namespace Projeto_Treinamento.Model
         public int VitalidadeAtual { get; set; }
         public int ultimaR { get; set; }
         public Boolean estado { get; set; }
+        public Decisao escolhas { get; set; }
 
         private Classe classe { get; set; }
-        public Decisao escolhas { get; set; }
         
         public Classe getClasse()
         {

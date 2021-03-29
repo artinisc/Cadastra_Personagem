@@ -34,7 +34,6 @@ namespace Projeto_Treinamento.Model
             do
             {
                 personagem = comeco.criarP();
-                classe = personagem.getClasse();
 
                 Console.WriteLine("Precione 1 para continuar.");
                 Console.WriteLine("\nPrecione 2 para criar novo personagem.\n");
