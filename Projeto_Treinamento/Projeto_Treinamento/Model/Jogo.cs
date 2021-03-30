@@ -10,10 +10,10 @@ namespace Projeto_Treinamento.Model
     public class Jogo
     {
 
-        public void jogar(Personagem personagem, Classe classe)
+        public void jogar(Personagem personagem)
         {
 
-            personagem = etapaPrologo(personagem, classe);
+            personagem = etapaPrologo(personagem);
             if (personagem.estado == true)
             {
                 personagem = etapaInicio(personagem);
@@ -31,7 +31,7 @@ namespace Projeto_Treinamento.Model
 
         }
 
-        public Personagem etapaPrologo(Personagem personagem, Classe classe)
+        public Personagem etapaPrologo(Personagem personagem)
         {
             Prologo prologo = new Prologo();
             personagem = prologo.p1(personagem);

@@ -29,7 +29,7 @@ namespace Projeto_Treinamento.PartesJogo
             inf.infP(personagem);
             Console.WriteLine("Dr." + personagem.Nome + " espere!");
             Console.WriteLine("\n\n\nPrecione: \n 1 Para olhar para traz \n 2 Para continuar até seu laboratorio\n 3 Para gritar e sair correndo...");
-            resposta = Int32.Parse(Console.ReadLine());
+            try { resposta = Int32.Parse(Console.ReadLine());}catch (Exception x) { }
 
             do
             {
@@ -40,13 +40,14 @@ namespace Projeto_Treinamento.PartesJogo
                 else
                 {
                     Console.WriteLine("\n\n\nOpção " +resposta+ " Invalida! Selecione outro valor ...");
-                    resposta = Int32.Parse(Console.ReadLine());
+                    try { resposta = Int32.Parse(Console.ReadLine()); }catch (Exception x) { }
                 }
             } while (avanca == false);
 
             switch (resposta)
             {
                 case 1:
+                    personagem.escolhas.RecebeuInformacoesLaboratorio = true;
                     Console.Clear();
                     inf.infP(personagem);
                     Console.WriteLine("Voce vira e ve uma jovem garota vindo em sua direção...");
@@ -60,6 +61,7 @@ namespace Projeto_Treinamento.PartesJogo
                     Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
                     Console.ReadLine();
                     Console.Clear();
+                    inf.infP(personagem);
                     Console.WriteLine("Voce segue ao laboratorio, e ve sobre a mesa de testes uma esfera flutuando e rodeada por uma corrente eletrica.");
                     Console.WriteLine("Ao me aproximar percebo que éla parece feita em um materia metalico,");
                     Console.WriteLine("porem diferente dos que conhesso, este é um pouco fosco,");
@@ -78,7 +80,6 @@ namespace Projeto_Treinamento.PartesJogo
                     Console.WriteLine("Voce chega ao seu laboratorio e inicia os preparativos para dar continuidade nos testes de materiais supercondutores...");
                     Console.WriteLine("Escuta um som metalico e ao se virar é surpreendido por um clarão ofuscante!");
                     Console.WriteLine("Por um momento tudo fica escuro e voce sente um forte nausea");
-                    personagem.escolhas.RecebeuInformacoesLaboratorio = false;
                     personagem.estado = true;
                     personagem.ultimaR = 2;
                     Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");

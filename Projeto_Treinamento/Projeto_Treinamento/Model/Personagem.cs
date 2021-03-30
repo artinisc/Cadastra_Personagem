@@ -28,13 +28,13 @@ namespace Projeto_Treinamento.Model
         public int VitalidadeAtual { get; set; }
         public int ultimaR { get; set; }
         public Boolean estado { get; set; }
-        public Decisao escolhas { get; set; }
 
-        private Classe classe { get; set; }
+        public Decisao escolhas = new Decisao();
+        private Classe classe = new Classe();
         
         public Classe getClasse()
         {
-            return classe;
+            return this.classe;
         }
 
         public string setClasse(Classe classeP)
@@ -49,7 +49,7 @@ namespace Projeto_Treinamento.Model
             {
                 if (classeP.Nome.Equals(C.Nome))
                 {
-                    classe = classeP;
+                    this.classe = classeP;
                     erro = "sucesso";
                 }
             }

@@ -24,7 +24,6 @@ namespace Projeto_Treinamento.Model
 
             //personagm
             Personagem personagem = new Personagem();
-            Classe classe = new Classe();
 
             //Jogo
             Jogo jogo = new Jogo();
@@ -38,7 +37,7 @@ namespace Projeto_Treinamento.Model
                 Console.WriteLine("Precione 1 para continuar.");
                 Console.WriteLine("\nPrecione 2 para criar novo personagem.\n");
                 Console.WriteLine("\nPrecione 3 para sair.\n");
-                resposta = Int32.Parse(Console.ReadLine());
+                try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
 
                 do
                 {
@@ -49,7 +48,7 @@ namespace Projeto_Treinamento.Model
                     else
                     {
                         Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                        resposta = Int32.Parse(Console.ReadLine());
+                        try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                     }
                 } while (avanca == false);
 
@@ -57,7 +56,7 @@ namespace Projeto_Treinamento.Model
 
             if (resposta == 1)
             {
-                jogo.jogar(personagem, classe);
+                jogo.jogar(personagem);
             }
 
             

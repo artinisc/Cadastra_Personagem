@@ -11,8 +11,8 @@ namespace Projeto_Treinamento.Model
 
         //informação do personagem
         public void infP(Personagem personagem){
-            Console.WriteLine("   Personagem: " + personagem.Nome);
-            Console.WriteLine("\n\n");
+            Console.WriteLine("   " + personagem.Nome);
+            Console.WriteLine("\n");
         }
 
         //informação do personagem e sua classe
@@ -21,7 +21,7 @@ namespace Projeto_Treinamento.Model
             Console.WriteLine("   Personagem: " + personagem.Nome + " (" + classe.Nome + ")");
             Console.WriteLine("   Resistencia: " + personagem.Restencia + " | Inteligencia: " + personagem.Inteligencia + " | Carisma:    " + personagem.Carisma);
             Console.WriteLine("   Força:       " + personagem.Forca +     " | Magia:        " + personagem.Magia +        " | Velocidade: " + personagem.Velocidade + " | Vitalidade: " + personagem.VitalidadeAtual + "/" + personagem.Vitalidade);
-            Console.WriteLine("\n\n");
+            Console.WriteLine("\n");
         }
 
     }

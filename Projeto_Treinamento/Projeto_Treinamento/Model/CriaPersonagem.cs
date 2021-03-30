@@ -63,7 +63,7 @@ namespace Projeto_Treinamento.Model
                 contC++;
                 Console.WriteLine("Digite " + contC + " para " + C.Nome + "\n");
             }
-            recebeEntrada = Int32.Parse(Console.ReadLine());
+            try {recebeEntrada = Int32.Parse(Console.ReadLine());}catch(Exception x){}
             recebeEntrada--;
 
             do
@@ -93,7 +93,7 @@ namespace Projeto_Treinamento.Model
                         contC++;
                         Console.WriteLine("Digite " + contC + " para " + C.Nome + "\n");
                     }
-                    recebeEntrada = Int32.Parse(Console.ReadLine());
+                    try{recebeEntrada = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                     recebeEntrada--;
                 }
             } while (verifica == false);

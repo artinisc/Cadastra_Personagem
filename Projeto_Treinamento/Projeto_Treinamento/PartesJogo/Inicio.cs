@@ -15,7 +15,6 @@ namespace Projeto_Treinamento.PartesJogo
 
             CriaPersonagem criacao = new CriaPersonagem();
             Informacoes inf = new Informacoes();
-            Classe classe = new Classe();
             int resposta = 0;
             Boolean avanca = false;
 
@@ -43,7 +42,6 @@ namespace Projeto_Treinamento.PartesJogo
             inf.infP(personagem);
 
             personagem = criacao.escolherC(personagem);
-            classe = personagem.getClasse();
 
             Console.Clear();
             inf.infPC(personagem, personagem.getClasse());
@@ -60,12 +58,12 @@ namespace Projeto_Treinamento.PartesJogo
 
             if (personagem.escolhas.RecebeuInformacoesLaboratorio == true)
             {
-                if (classe.Nome == "Guerreiro")
+                if (personagem.getClasse().Nome == "Guerreiro")
                 {
                     Console.Clear();
-                    inf.infP(personagem);
+                    inf.infPC(personagem, personagem.getClasse());
                     Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Força \n 2 Para +5 Resistencia\n 3 Para Investida (Libera tecnica que permite avançar contra o oponente causando dano com probabilidade de derrubar)");
-                    resposta = Int32.Parse(Console.ReadLine());
+                    try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                     do
                     {
                         if (resposta == 1 || resposta == 2 || resposta == 3)
@@ -80,9 +78,7 @@ namespace Projeto_Treinamento.PartesJogo
                                     personagem.RestenciaBase = +5;
                                     break;
                                 case 3:
-                                    classe.PoderPrincipal = "Investida";
-                                    personagem.setClasse(classe);
-                                    classe = personagem.getClasse();
+                                    personagem.getClasse().PoderPrincipal = "Investida";
                                     break;
                             }
                             personagem.defineAtributos();
@@ -90,16 +86,16 @@ namespace Projeto_Treinamento.PartesJogo
                         else
                         {
                             Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                            resposta = Int32.Parse(Console.ReadLine());
+                            try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                         }
                     } while (avanca == false);
                 }
-                else if (classe.Nome == "Mago")
+                else if (personagem.getClasse().Nome == "Mago")
                 {
                     Console.Clear();
-                    inf.infP(personagem);
+                    inf.infPC(personagem, personagem.getClasse());
                     Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Magia\n 2 Para +5 Inteligencia\n 3 Para Bola de Fogo (Libera tecnica que permite lançar uma bola de fogo sobre o oponente causando dano com probabilidade de cegueira)");
-                    resposta = Int32.Parse(Console.ReadLine());
+                    try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                     do
                     {
                         if (resposta == 1 || resposta == 2 || resposta == 3)
@@ -114,9 +110,7 @@ namespace Projeto_Treinamento.PartesJogo
                                     personagem.InteligenciaBase = +5;
                                     break;
                                 case 3:
-                                    classe.PoderPrincipal = "Bola de Fogo";
-                                    personagem.setClasse(classe);
-                                    classe = personagem.getClasse();
+                                    personagem.getClasse().PoderPrincipal = "Bola de Fogo";
                                     break;
                             }
                             personagem.defineAtributos();
@@ -124,16 +118,16 @@ namespace Projeto_Treinamento.PartesJogo
                         else
                         {
                             Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                            resposta = Int32.Parse(Console.ReadLine());
+                            try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                         }
                     } while (avanca == false);
                 }
-                else if (classe.Nome == "Arqueiro")
+                else if (personagem.getClasse().Nome == "Arqueiro")
                 {
                     Console.Clear();
-                    inf.infP(personagem);
+                    inf.infPC(personagem, personagem.getClasse());
                     Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Velocidade \n 2 Para +5 Carisma\n 3 Para Evadir (Libera tecnica que permite saltar para loge da ameaça esquivando de qualquer ataque com probabilidade de confundir)");
-                    resposta = Int32.Parse(Console.ReadLine());
+                    try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                     do
                     {
                         if (resposta == 1 || resposta == 2 || resposta == 3)
@@ -148,9 +142,7 @@ namespace Projeto_Treinamento.PartesJogo
                                     personagem.CarismaBase = +5;
                                     break;
                                 case 3:
-                                    classe.PoderPrincipal = "Evadir";
-                                    personagem.setClasse(classe);
-                                    classe = personagem.getClasse();
+                                    personagem.getClasse().PoderPrincipal = "Evadir";
                                     break;
                             }
                             personagem.defineAtributos();
@@ -158,7 +150,7 @@ namespace Projeto_Treinamento.PartesJogo
                         else
                         {
                             Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                            resposta = Int32.Parse(Console.ReadLine());
+                            try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                         }
                     } while (avanca == false);
                 }
@@ -166,9 +158,9 @@ namespace Projeto_Treinamento.PartesJogo
             else
             {
                 Console.Clear();
-                inf.infP(personagem);
+                inf.infPC(personagem, personagem.getClasse());
                 Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Inteligencia \n 2 Para +5 Carisma\n 3 Para +5 Resistencia");
-                resposta = Int32.Parse(Console.ReadLine());
+                try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                 do
                 {
                     if (resposta == 1 || resposta == 2 || resposta == 3)
@@ -191,7 +183,7 @@ namespace Projeto_Treinamento.PartesJogo
                     else
                     {
                         Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                        resposta = Int32.Parse(Console.ReadLine());
+                        try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                     }
                 } while (avanca == false);
             }
@@ -204,13 +196,12 @@ namespace Projeto_Treinamento.PartesJogo
 
             CriaPersonagem criacao = new CriaPersonagem();
             Informacoes inf = new Informacoes();
-            Classe classe = new Classe();
-            classe = personagem.getClasse();
             int resposta = 0;
             Boolean avanca = false;
+            int nResposta = 0;
 
             Console.Clear();
-            inf.infP(personagem);
+            inf.infPC(personagem, personagem.getClasse());
             Console.WriteLine("CAPITULO I PARTE II - PRIMEIRAS DESCOBERTAS\n\n");
             Console.WriteLine("Voce continua sem entender nada, principalmente por parecer lembrar e fazer coisas as quais nunca fez ou viveu antes.");
             Console.WriteLine("Sua cabeça esta uma confuzão e doi um pouco.");
@@ -221,42 +212,52 @@ namespace Projeto_Treinamento.PartesJogo
             Console.ReadLine();
 
             Console.Clear();
-            inf.infP(personagem);
-            Console.WriteLine("\n\n\nPrecione: \n 1 Para 'Espere, eu não fasso ideia, quando me dei por si ja estava aqui, não lembro de nada...'\n 2 Para 'Eu agiria com mais cautela no seu lugar. Voce sabe a quem esta ameaçando!'\n 3 Para usar tecnica "+classe.PoderPrincipal);
-            resposta = Int32.Parse(Console.ReadLine());
+            inf.infPC(personagem, personagem.getClasse());
+            if (!personagem.getClasse().PoderPrincipal.Equals(""))
+            {
+                Console.WriteLine("\n\n\nPrecione: \n 1 Para 'Espere, eu não fasso ideia, quando me dei por si ja estava aqui, não lembro de nada...'\n 2 Para 'Eu agiria com mais cautela no seu lugar. Voce sabe a quem esta ameaçando!'\n 3 Para usar tecnica " + personagem.getClasse().PoderPrincipal);
+                nResposta = 3;
+            }
+            else
+            {
+                Console.WriteLine("\n\n\nPrecione: \n 1 Para 'Espere, eu não fasso ideia, quando me dei por si ja estava aqui, não lembro de nada...'\n 2 Para 'Eu agiria com mais cautela no seu lugar. Voce sabe a quem esta ameaçando!'");
+                nResposta = 2;
+            }
+            try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
+
             do
             {
-                if (resposta == 1 || resposta == 2 || resposta == 3)
+                if (resposta >= 1 && resposta <= nResposta)
                 {
                     avanca = true;
                     switch (resposta)
                     {
                         case 1:
                             Console.Clear();
-                            inf.infP(personagem);
-                            Console.WriteLine("Espere, eu não fasso ideia, quando me dei por si ja estava aqui, não lembro de nada...");
+                            inf.infPC(personagem, personagem.getClasse());
+                            Console.WriteLine("Espere, não fasso ideia, não lembro de nada...");
                             Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
                             Console.ReadLine();
                             break;
                         case 2:
                             Console.Clear();
-                            inf.infP(personagem);
-                            Console.WriteLine("Eu agiria com mais cautela no seu lugar. Voce sabe a quem esta ameaçando!");
+                            inf.infPC(personagem, personagem.getClasse());
+                            Console.WriteLine("Eu agiria com mais cautela. Voce sabe a quem esta ameaçando!");
                             Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
                             Console.ReadLine();
                             break;
                         case 3:
                             Console.Clear();
-                            inf.infP(personagem);
-                            if (classe.Nome == "Guerreiro")
+                            inf.infPC(personagem, personagem.getClasse());
+                            if (personagem.getClasse().Nome == "Guerreiro")
                             {
                                 Console.WriteLine("Voce vira e rapidamente avança em furia contra o que parecem ser 3 monges armados e um senhor de idade bastante avançada.");
                             }
-                            else if (classe.Nome == "Mago")
+                            else if (personagem.getClasse().Nome == "Mago")
                             {
                                 Console.WriteLine("Voce cria um vortice de labaredas entre suas mãos e arremeça contra o que parecem ser 3 monges armados e um senhor de idade bastante avançada.");
                             }
-                            else if (classe.Nome == "Arqueiro")
+                            else if (personagem.getClasse().Nome == "Arqueiro")
                             {
                                 Console.WriteLine("Voce salta velosmente para longe e vo o que  parecem ser 3 monges armados e um senhor de idade bastante avançada.");
                             }
@@ -269,7 +270,7 @@ namespace Projeto_Treinamento.PartesJogo
                 else
                 {
                     Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                    resposta = Int32.Parse(Console.ReadLine());
+                    try{resposta = Int32.Parse(Console.ReadLine());}catch (Exception x){ }
                 }
             } while (avanca == false);
 
