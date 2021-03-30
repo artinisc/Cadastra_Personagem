@@ -16,11 +16,15 @@ namespace Projeto_Treinamento.Model
             personagem = etapaPrologo(personagem, classe);
             if (personagem.estado == true)
             {
-                personagem = etapaInicio(personagem, classe);
+                personagem = etapaInicio(personagem);
             }
             if (personagem.estado == true)
             {
-                
+                personagem = etapaPrimeirasDescobertas(personagem);
+            }
+            if (personagem.estado == true)
+            {
+
             }
 
 
@@ -34,10 +38,17 @@ namespace Projeto_Treinamento.Model
             return personagem;
         }
 
-        public Personagem etapaInicio(Personagem personagem, Classe classe)
+        public Personagem etapaInicio(Personagem personagem)
         {
             Inicio inicio = new Inicio();
             personagem = inicio.cap1(personagem);
+            return personagem;
+        }
+
+        public Personagem etapaPrimeirasDescobertas(Personagem personagem)
+        {
+            Inicio inicio = new Inicio();
+            personagem = inicio.cap2(personagem);
             return personagem;
         }
 
